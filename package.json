@@ -36,7 +36,18 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "vue/no-static-inline-styles": [
+        "error",
+        {
+          "allowBinding": false
+        }
+      ],
+      "vue/no-duplicate-attributes": ["error", {
+        "allowCoexistClass": false,
+        "allowCoexistStyle": true
+      }]
+    }
   },
   "browserslist": [
     "> 1%",

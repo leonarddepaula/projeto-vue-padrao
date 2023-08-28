@@ -1,10 +1,11 @@
 <template>
   <div>
 
-    <h1>componente olá nundo {{ variavel }}</h1>
+    <h1  v-bind:class="classe">componente olá nundo {{ variavel }}</h1>
     <p>Link da API: {{ url_api }}</p>
     <p>Modo: {{ modo }}</p>
-    
+    <p>Token: {{ token }}</p>
+
   </div>
 </template>
 
@@ -14,7 +15,9 @@ export default {
     return {
       variavel : process.env.VUE_APP_MINHA_VARIAVEL_DE_AMBIENTE,
       url_api: process.env.VUE_APP_API_URL,
-      modo: process.env.VUE_APP_MODO
+      modo: process.env.VUE_APP_MODO,
+      token: process.env.VUE_APP_TOKEN,
+      classe: 'fundoVerde vermelho'
     }
   },
   name: 'HelloWorld',
@@ -23,6 +26,12 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+  .vermelho{
+    color: red;
+  }
 
+  .fundoVerde {
+    background-color: green;
+  }
 </style>
